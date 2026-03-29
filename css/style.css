@@ -33,7 +33,32 @@ nav a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: radial-gradient(circle at 30% 30%, #1e293b, #020617);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #020617, #0B0F19, #111827);
+}
+
+/* DREAMY GLOW LAYERS */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79,70,229,0.4), transparent 70%);
+  top: -100px;
+  left: -100px;
+  filter: blur(120px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(147,51,234,0.3), transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  filter: blur(120px);
 }
 
 .hero h1 {
