@@ -1,4 +1,7 @@
-// FADE IN ON SCROLL
+// =======================
+// FADE-IN ANIMATION
+// =======================
+
 const elements = document.querySelectorAll('.fade-in');
 
 window.addEventListener('scroll', () => {
@@ -10,9 +13,13 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// PARTICLE BACKGROUND (simple WOW)
+
+// =======================
+// PARTICLE BACKGROUND (HERO ONLY)
+// =======================
+
 const canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+document.querySelector(".hero").appendChild(canvas);
 
 const ctx = canvas.getContext("2d");
 
@@ -21,12 +28,12 @@ canvas.height = window.innerHeight;
 
 let particles = [];
 
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 80; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
     r: Math.random() * 2,
-    d: Math.random() * 1
+    d: Math.random() * 0.7
   });
 }
 
@@ -50,4 +57,4 @@ function update() {
   });
 }
 
-setInterval(draw, 33);
+setInterval(draw, 30);
